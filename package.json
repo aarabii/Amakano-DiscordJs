@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@weky/inlinereply": "0.0.0",
+    "akaneko": "^5.2.0",
     "animequote": "^1.1.1",
     "ascii-table": "0.0.9",
     "better-sqlite3": "^7.4.3",
