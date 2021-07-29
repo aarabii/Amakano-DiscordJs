@@ -4,11 +4,21 @@ const app = express()
 module.exports = async(client) => {
 
 
-  client.on('ready', () => {
+  
+  const arrayOfStatus = [
+   `${client.users.cache.size} USERS IN ${client.guilds.cache.size} SERVERS`,
+   'Support Server: https://discord.gg/jhfMMSUTa4',
+   'Hentai',
+  ];
 
-      client.user.setActivity('Server', { type: 'WATCHING' });
-    
-  })
+  let index = 0;
+  setInterval(() => {
+    if (index === arrayOfStatus.length) index = 0;
+    const status = arrayOfStatus[index];
+    client.user.setActivity(status, { type: "WATCHING" });
+    index++;
+  }, 5000);
+  
 
 
  app.get("/", (req, res) => {
